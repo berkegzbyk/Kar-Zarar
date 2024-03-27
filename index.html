@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Satış Takip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sipariş Bilgileri</h2>
+        <label for="country">Ülke:</label>
+        <select id="country">
+            <option value="UAE">Birleşik Arap Emirlikleri</option>
+            <option value="Saudi Arabia">Suudi Arabistan</option>
+            <option value="Canada">Kanada</option>
+            <option value="Mexico">Meksika</option>
+        </select>
+        <label for="revenue">Amazon Ciro :</label>
+        <input type="number" id="revenue">
+        <label for="buyer-cost">Alıcı Hesap Maliyeti:</label>
+        <input type="number" id="buyer-cost">
+        <label for="warehouse-cost">Ara Depo Kargo Maliyeti:</label>
+        <input type="number" id="warehouse-cost">
+        <label for="extra-cost">Ekstra Kargo Maliyeti:</label>
+        <input type="number" id="extra-cost">
+        <button onclick="calculateProfit()">Kar Hesapla</button>
+        <div id="result"></div>
+    </div>
+    <footer>Created by Berke Gözübüyük</footer>
+    <script src="script.js"></script>
+</body>
+</html>
