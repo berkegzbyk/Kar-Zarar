@@ -32,20 +32,21 @@ function calculateProfit() {
     const revenueUSD = revenue * exchangeRate;
     const totalCost = buyerCost + warehouseCost + extraCost;
     const grossProfitUSD = revenueUSD - totalCost;
-    const grossProfit = grossProfitUSD / exchangeRate;
-    const netProfit = grossProfit - (grossProfit * 0.045);
+    const withdrawalCommission = grossProfitUSD * 0.032; // Çekim komisyonu hesabı
+    const netProfit = grossProfitUSD - withdrawalCommission; // Net kar hesabı
+
+    const grossProfit = netProfit + withdrawalCommission; // Brüt kar hesabı
 
     const resultElement = document.getElementById('result');
     resultElement.innerHTML = `
         <h3>Toplam Maliyet:</h3>
         <p>${totalCost.toFixed(2)} USD</p>
         <h3>Brüt Kar:</h3>
-        <p>${grossProfit.toFixed(2)} USD</p>
+        <p>${(grossProfit * 0.955).toFixed(2)}</p> <!-- Yüzde 4.5 kesinti yapılarak brüt kar hesaplanır -->
         <h3>Net Kar:</h3>
         <p>${netProfit.toFixed(2)} USD</p>
         <h3>Kar Marjı:</h3>
         <p>${((netProfit / revenueUSD) * 100).toFixed(2)}%</p>
     `;
 }
-
 
